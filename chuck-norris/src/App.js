@@ -2,13 +2,14 @@ import React, { useEffect } from "react";
 import "./App.scss";
 import { connect } from "react-redux";
 import { getJoke, saveJoke } from "./actions";
+import Saved from "./components/Saved.js";
 
 function App({ getJoke, quote }) {
   useEffect(() => {
     getJoke();
   }, [getJoke]);
 
-  // console.log("APP-Props", getJoke, isFetching, quote);
+  // console.log("APP-Props", getJoke, quote);
   return (
     <div className="App">
       <header>
@@ -31,6 +32,7 @@ function App({ getJoke, quote }) {
           Next
         </button>
       </div>
+      <Saved />
     </div>
   );
 }
@@ -63,5 +65,5 @@ const catagories = [
 
 export default connect(
   mapStateToProps,
-  { getJoke }
+  { saveJoke, getJoke }
 )(App);

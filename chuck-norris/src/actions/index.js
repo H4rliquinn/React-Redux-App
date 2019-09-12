@@ -16,7 +16,7 @@ export const getJoke = () => dispatch => {
     .catch(err => {
       dispatch({
         type: FETCHING_FAIL,
-        payload: `${err.response.message} code: ${err.response.code}`
+        payload: err
       });
     });
 };
