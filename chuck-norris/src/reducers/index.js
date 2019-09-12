@@ -15,12 +15,7 @@ const initialState = {
   error: "",
   saved: [
     {
-      id: "12523",
-      icon_url: "",
-      value: "Chuck Norris can track a bloodhound."
-    },
-    {
-      id: "12523",
+      id: "12524",
       icon_url: "",
       value: "Chuck Norris can roundhouse kick you around the world."
     }
@@ -28,6 +23,7 @@ const initialState = {
 };
 
 export const reducer = (state = initialState, action) => {
+  console.log("ACTION", action.type);
   switch (action.type) {
     case FETCHING_START:
       return {
@@ -40,7 +36,6 @@ export const reducer = (state = initialState, action) => {
         }
       };
     case FETCHING_SUCCESS:
-      //   console.log("ACTION", action);
       return {
         ...state,
         quote: {
@@ -55,11 +50,13 @@ export const reducer = (state = initialState, action) => {
       console.log(action.payload);
       return state;
     case SAVE_JOKE:
+      console.log("SAVE", action.payload);
       return {
         ...state,
         saved: [...state.saved, state.quote]
       };
     default:
+      console.log("FAIL");
       return state;
   }
 };

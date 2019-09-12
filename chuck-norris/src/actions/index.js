@@ -22,5 +22,6 @@ export const getJoke = () => dispatch => {
 };
 
 export const saveJoke = () => {
+  console.log("saveAction");
   return { type: SAVE_JOKE };
 };

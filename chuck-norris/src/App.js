@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { getJoke, saveJoke } from "./actions";
 import Saved from "./components/Saved.js";
 
-function App({ getJoke, quote }) {
+function App({ getJoke, saveJoke, quote }) {
   useEffect(() => {
     getJoke();
   }, [getJoke]);

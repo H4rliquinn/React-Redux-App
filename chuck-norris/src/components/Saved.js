@@ -9,7 +9,6 @@ function Saved(props) {
         <h2>Saved Facts!</h2>
       </div>
       {props.saved.map(item => {
-        console.log(item);
         return (
           <div className="savedItem" key={item.id}>
             <div>{item.id}</div>
